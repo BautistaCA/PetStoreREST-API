@@ -25,7 +25,9 @@ public class Customer {
 	
 	private String customerLastName; // Need to keep FirstName and LastName separate
 	
-	private String Customer_email;
+	private String customerEmail;
+	
+	
 	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude

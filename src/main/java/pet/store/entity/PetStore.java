@@ -30,25 +30,27 @@ public class PetStore {
 	private String petStoreCity;
 	private String petStoreState;
 	private String petStoreZip;
-	private Long petStorePhone;
+	private String petStorePhone;
 	//I get an error that customer doesn't exist. I'm assuming that
 	//it happens due to the nature of the application's initialization,
 	//because it goes away after the 1st time it runs.
 	
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
+
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	
 	@JoinTable(name = "pet_store_customer", joinColumns = 
 	@JoinColumn(name = "pet_store_id"), inverseJoinColumns = 
 	@JoinColumn(name = "customer_id"))
-	private Set<Customer> customers = new HashSet<>();
-	
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
+	private Set<Customer> customers = new HashSet<>();
+	
+
 	@OneToMany(mappedBy = "petStore",
 			   cascade = CascadeType.ALL,
 			   orphanRemoval = true)
-	Set<Employee> employees = new HashSet<>();
+	@EqualsAndHashCode.Exclude
+	@ToString.Exclude
+	private Set<Employee> employees = new HashSet<>();
 	
 }
