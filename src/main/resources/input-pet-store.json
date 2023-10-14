@@ -1,0 +1,8 @@
+{
+  "petStoreName": "Final Test Store",
+  "petStoreAddress": "9999 North Test Lane",
+  "petStoreCity": "Primm",
+  "petStoreState": "Nevada",
+  "petStoreZip" : "77700",
+  "petStorePhone": "702-999-1111"
+}
